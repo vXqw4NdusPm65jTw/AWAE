@@ -1,0 +1,95 @@
+$ /opt/lampp/bin/mysql -u root
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 14
+Server version: 5.6.20-log Source distribution
+
+Copyright (c) 2000, 2014, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> USE atutor;
+Database changed
+mysql> SELECT login, password FROM AT_members;
++--------+------------------------------------------+
+| login  | password                                 |
++--------+------------------------------------------+
+| atutor | 4b863fcf722bd871226ec1207b77424c5a5ebbc8 |
++--------+------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT login, password FROM AT_admins;
++----------------------+------------------------------------------+
+| login                | password                                 |
++----------------------+------------------------------------------+
+| atutor_administrator | 4b863fcf722bd871226ec1207b77424c5a5ebbc8 |
++----------------------+------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> quit
+Bye
+
+
+
+In /opt/lampp/htdocs/ATutor/login.php:
+
+define('AT_INCLUDE_PATH', 'include/');
+require (AT_INCLUDE_PATH.'vitals.inc.php');
+include(AT_INCLUDE_PATH.'login_functions.inc.php');
+
+
+
+In /opt/lampp/htdocs/ATutor/include/login_functions.inc.php:
+
+if (isset($_POST['token']))
+{
+    $_SESSION['token'] = $_POST['token'];
+}
+else
+{
+    if (!isset($_SESSION['token']))
+        $_SESSION['token'] = sha1(mt_rand() . microtime(TRUE));
+}
+
+...
+
+if (isset($cookie_login, $cookie_pass) && !isset($_POST['submit'])) {
+    /* auto login */
+    $this_login        = $cookie_login;
+    $this_password    = $cookie_pass;
+    $auto_login        = 1;
+    $used_cookie    = true;
+} else if (isset($_POST['submit'])) {
+    /* form post login */
+    $this_password = $_POST['form_password_hidden'];
+    $this_login        = $_POST['form_login'];
+    $auto_login        = isset($_POST['auto']) ? intval($_POST['auto']) : 0;
+    $used_cookie    = false;
+} else if (isset($_POST['submit1'])) {
+    /* form post login on autoenroll registration*/
+    $this_password = $_POST['form1_password_hidden'];
+    $this_login        = $_POST['form1_login'];
+    $auto_login        = isset($_POST['auto']) ? intval($_POST['auto']) : 0;
+    $used_cookie    = false;
+}
+
+if (isset($this_login, $this_password)) {
+
+...
+
+if ($used_cookie) {
+        #4775: password now store with salt
+        $rows = queryDB("SELECT password, last_login FROM %smembers WHERE login='%s'", array(TABLE_PREFIX, $this_login), TRUE);
+        $cookieRow = $rows;
+        $saltedPassword = hash('sha512', $cookieRow['password'] . hash('sha512', $cookieRow['last_login']));
+        $row = queryDB("SELECT member_id, login, first_name, second_name, last_name, preferences,password AS pass, language, status, last_login FROM %smembers WHERE login='%s' AND '%s'='%s'", array(TABLE_PREFIX, $this_login, $saltedPassword, $this_password), TRUE);
+    } else {
+        $row = queryDB("SELECT member_id, login, first_name, second_name, last_name, preferences, language, status, password AS pass, last_login FROM %smembers WHERE (login='%s' OR email='%s') AND SHA1(CONCAT(password, '%s'))='%s'", array(TABLE_PREFIX, $this_login, $this_login, $_SESSION['token'], $this_password), TRUE);
+    }
+
+...
+
+}
